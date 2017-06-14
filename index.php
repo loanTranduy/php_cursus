@@ -1,3 +1,4 @@
+<?php include("functions.php");?>
 <?php include("header.php");?>
 <?php 
 	if (isset($_GET['page'])):
@@ -11,6 +12,8 @@
 				break;
 			default: include("home.php");
 		endswitch;
+	elseif(isset($_GET['project'])):
+		include("project.php");
 	else: 
 		include("home.php");
 	endif;
