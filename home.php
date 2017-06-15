@@ -15,7 +15,7 @@
 				<figure class="thumbnail">
 					<div class="thumbnail-img">
 						<div class="thumbnail-hover"><a href="project-<?php echo $row->id_modules;?>.html"></a></div>
-						<a href="project-<?php echo $row->id_modules;?>.html"><img src="img/projects/methodo.jpg" alt="project-<?php echo $row->id_modules;?>" /></a>
+						<a href="project-<?php echo $row->id_modules;?>.html"><img src="img/projects/<?php echo $row->id_modules?>-1.jpg" alt="project-<?php echo $row->id_modules;?>" /></a>
 					</div>
 					<figcaption class="thumbnail-caption"><a class="caption-link" href="project-<?php echo $row->id_modules;?>.html"><?php echo $row->titre;?></a></figcaption>
 				</figure>
