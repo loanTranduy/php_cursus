@@ -9,11 +9,12 @@
 
 <!-- ******************************************************************************************
 Set the type and color theme here -->
-<link href="css/hawthorne_type1_color6.css" rel="stylesheet">
+<link href="css/hawthorne_type1_color1.css" rel="stylesheet">
 <!--  ************************************************************************************* -->
 
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <script src="js/vendor/modernizr.js"></script>
+
 
 </head>
 <body>

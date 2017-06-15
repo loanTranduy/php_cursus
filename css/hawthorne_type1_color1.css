@@ -49,6 +49,13 @@ aside.blog-sidebar h5 {
   text-align: center;
 }
 
+.lemodule{
+  width:50%;
+  margin:0 auto;
+}
+
+
+
 /* line 32, ../scss/master/_blog.scss */
 aside.blog-sidebar h5, .related-posts h5 {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;

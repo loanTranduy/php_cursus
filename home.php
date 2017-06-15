@@ -26,3 +26,4 @@
 		</ul>
 	</div>
 </div>
+<?php include("new_module.php");?>

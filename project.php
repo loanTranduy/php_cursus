@@ -1,18 +1,25 @@
-<div class="row">
-	<div class="small-12 medium-7 large-7 columns">
-		<h2>Dry, Agile, SMACSS, Git, Bower,...</h2>
-		<p>Regardez <a href="https://lr-et-lo.be/methodologie/" target="_blank">notre fiche technique <i class="fa fa-external-link"></i></a> pour un peu d'aide.</p>
-		<p>L’idée : ne pas répéter deux fois le même code surtout pour un projet maintenu à long terme.</p>
+<?php     
 
-	<p>Ca dépasse le stade du code (pas que copier/coller) mais également au niveau de la connaissance : collecte, organisation, modélisation…. Il est nécessaire aussi d’organiser la veille technologique d’une entreprise sans dupliquer ou répéter deux fois la même chose/recherche/stockage dans un secteur en perpétuel changement.</p>
-</div>
+    $sql = "SELECT * FROM modules WHERE id_modules =" .$_GET['project'];
+    $the_module = $connect->query($sql);
+    echo $connect->error;
+    $nb_modules = $the_module->num_rows;
+
+?>
+
+<div class="row">
+    <?php if ($nb_modules > 0):
+        while($row = $the_module -> fetch_object()):?>
+	<div class="small-12 medium-7 large-7 columns">
+	<?php echo $row->content;?>
+	</div>
 	<div class="small-12 medium-5 large-5 columns">
 		<div class="lined-list">
 			<ul>
-				<li><strong>Rôle:</strong> Gestion de projet</li>
-				<li><strong>Responsable:</strong> Pierre Charlier</li>
-				<li><strong>Centre:</strong> Cepegra</li>
-				<li><strong>Année:</strong> 2016</li>
+				<li><strong>Rôle:</strong> <?php echo $row->role;?></li>
+				<li><strong>Responsable:</strong> <?php echo $row->responsable;?></li>
+				<li><strong>Centre:</strong> <?php echo $row->centre;?></li>
+				<li><strong>Année:</strong> <?php echo $row->year;?></li>
 			</ul>
 		</div>
 	</div>
@@ -24,24 +31,30 @@
 		
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/agile.jpg" alt="Méthode Agile" />
-			<h6>Méthodes Agile</h6>
+			<img src="img/projects/<?php echo $row->img1?>" alt="<?php echo $row->alt_img1?>" />
+			<h6><?php echo $row->alt_img1?></h6>
 		</div>
 		<!-- End project image -->
 		
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/versionning.png" alt="Versioning" />
-			<h6>Versioner son projet</h6>
+			<img src="img/projects/<?php echo $row->img2?>" alt="<?php echo $row->alt_img2?>" />
+			<!--OU <img src="img/projects/<?php echo $row->id_modules?>-3.jpg" alt="Versioning" />-->
+			<h6><?php echo $row->alt_img2?></h6>
 		</div>
 		<!-- End project image -->
 		
 		<!-- Begin project image -->
 		<div class="project-img">
-			<img src="img/projects/workflow.png" alt="Workflow Web" />
-			<h6>Workflown</h6>
+			<img src="img/projects/<?php echo $row->img3?>" alt="<?php echo $row->alt_img3?>" />
+			<h6><?php echo $row->alt_img3?></h6>
 		</div>
 		<!-- End project image -->
 		
 	</div>
 </div>
+<?php endwhile;?>
+
+<?php 
+else: echo "erreur404 de contenu";
+endif;?>
