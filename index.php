@@ -1,4 +1,5 @@
-<?php include("functions.php");?>
+<?php require("config.php");?>
+<?php include("functions.php" );?>
 <?php include("header.php");?>
 <?php 
 	if (isset($_GET['page'])):
